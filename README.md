@@ -3,7 +3,7 @@ Akbank Makine Öğrenmesine Giriş Bootcamp
 
 # 🎀
 
-## Report
+## Rapor
 
 ## 📄 Medical Appointment No-Shows - Proje Raporu
 
@@ -43,72 +43,53 @@ Hipertension Yüksek tansiyon durumu
 Diabetes Diyabet durumu
 Alcoholism Alkol bağımlılığı
 SMS_received Hatırlatma mesajı alıp almadığı
-No-show Randevuya gelip gelmedi Target)
+No-show Randevuya gelip gelmedi (Target)
 ```
 ### 3. Veri Ön İşleme
 
-Eksik veri bulunmadı.
-Yaş sütununda negatif değer olmadığı teyit edildi.
-Kategorik değişkenler label encoding veya one-hot encoding ile dönüştürüldü.
-Tarihsel değişkenler (ScheduledDay, AppointmentDay) kullanıldıktan sonra gün-sayısı farkı üretildi.
-Hedef değişken "No-show" sütunu "Yes"  1 v e "No"  0 olarak dönüştürüldü.
+- Eksik veri bulunmadı.
+- Yaş sütununda negatif değer olmadığı teyit edildi.
+- Kategorik değişkenler label encoding veya one-hot encoding ile dönüştürüldü.
+- Tarihsel değişkenler (`ScheduledDay`, `AppointmentDay`) kullanıldıktan sonra gün-sayısı farkı üretildi.
+- Hedef değişken `"No-show"` sütunu `"Yes"` → 1 ve `"No"` → 0 olarak dönüştürüldü.
 
 ### 4. Keşifsel Veri Analizi (EDA)
 
 
-Yaş dağılımı incelendi.
-Sosyal yardım alan bireylerin randevuya gitmeme oranı düşük bulundu.
-SMS hatırlatma alanların, almayanlara kıyasla daha yüksek katılım oranına sahip olduğu görüldü.
-Mahalle bazlı no-show oranları incelendi.
+- Yaş dağılımı incelendi.
+- Sosyal yardım alan bireylerin randevuya gitmeme oranı düşük bulundu.
+- SMS hatırlatma alanların, almayanlara kıyasla daha yüksek katılım oranına sahip olduğu görüldü.
+- Mahalle bazlı no-show oranları incelendi.
+- Özellikler ile hedef değişken arasındaki korelasyon incelendi.
 
-
-```
-Özellikler ile hedef değişken arasındaki korelasyon incelendi.
-```
 ### 5. Modelleme
 
-Bu projede, hastaların randevularına gelmeme durumunu (
-No-show) tahmin etmek amacıyla çeşitli sınıflandırma algoritmaları kullanılmıştır. Model performansını^
-değerlendirmek için Accuracy, Precision, Recall, F1-score metrikleri ve Confusion Matrix kullanılmıştır.
+Bu projede, hastaların randevularına gelmeme durumunu (No-show) tahmin etmek amacıyla çeşitli sınıflandırma algoritmaları kullanılmıştır. Model performansını değerlendirmek için Accuracy, Precision, Recall, F1-score metrikleri ve Confusion Matrix kullanılmıştır.
 
 ### Kullanılan Algoritmalar:
 
-```
-Random Forest: Birçok karar ağacının birleşimiyle tahmin yapan güçlü bir topluluk öğrenme modelidir.
-Gradient Boosting: Zayıf öğrenicileri ardışık olarak güçlendirerek daha doğru tahminler yapan bir topluluk
-öğrenme algoritmasıdır.
-Logistic Regression: Girdilere dayalı olasılık hesaplayarak ikili sınıflandırma yapan basit ve doğrusal bir
-modeldir.
-Decision Tree: Veriyi karar kurallarıyla dallandırarak tahminler yapan ağaç benzeri yorumlanabilir bir modeldir.
-KNN KNe arest Neighbors): Yeni bir veri noktasını, en yakın 'k' komşusunun çoğunluk sınıfına göre
-sınıflandıran basit bir algoritmadır.
-```
+- **Random Forest:** Birçok karar ağacının birleşimiyle tahmin yapan güçlü bir topluluk öğrenme modelidir.
+- **Gradient Boosting:** Zayıf öğrenicileri ardışık olarak güçlendirerek daha doğru tahminler yapan bir topluluk öğrenme algoritmasıdır.
+- **Logistic Regression:** Girdilere dayalı olasılık hesaplayarak ikili sınıflandırma yapan basit ve doğrusal bir modeldir.
+- **Decision Tree:** Veriyi karar kurallarıyla dallandırarak tahminler yapan ağaç benzeri yorumlanabilir bir modeldir.
+- **KNN (K-Nearest Neighbors):** Yeni bir veri noktasını, en yakın 'k' komşusunun çoğunluk sınıfına göre sınıflandıran basit bir algoritmadır.
+
+  
 ### Performans Metrikleri:
 
-```
-Accuracy Doğruluk): Modelin tüm tahminlerinin ne kadarının doğru olduğunu gösteren genel bir başarı
-oranıdır.
-Precision Kesinlik): Modelin pozitif olarak tahmin ettiklerinin ne kadarının gerçekten pozitif olduğunu ölçer.
-Recall Duyarlılık): Gerçek pozitif vakaların ne kadarının model tarafından doğru bir şekilde yakalandığını
-gösterir.
-F1-score: Precision ve Recall'ın dengeli bir ortalaması olup, özellikle dengesiz veri setlerinde daha güvenilir bir
-performans ölçütüdür.
-Confusion Matrix Karmaşıklık Matrisi): Modelin doğru ve yanlış tahminlerini sınıf bazında detaylandıran bir
-tablodur.
-```
+- **Accuracy (Doğruluk):** Modelin tüm tahminlerinin ne kadarının doğru olduğunu gösteren genel bir başarı oranıdır.
+- **Precision (Kesinlik):** Modelin pozitif olarak tahmin ettiklerinin ne kadarının gerçekten pozitif olduğunu ölçer.
+- **Recall (Duyarlılık):** Gerçek pozitif vakaların ne kadarının model tarafından doğru bir şekilde yakalandığını gösterir.
+- **F1-score:** Precision ve Recall'ın dengeli bir ortalaması olup, özellikle dengesiz veri setlerinde daha güvenilir bir performans ölçütüdür.
+- **Confusion Matrix (Karmaşıklık Matrisi):** Modelin doğru ve yanlış tahminlerini sınıf bazında detaylandıran bir tablodur.
+  
 ### Model Karşılaştırma Sonuçları (SMOTE Öncesi)
 
 Dengesiz veri seti üzerinde yapılan ilk modelleme denemelerinde elde edilen F1Score değerleri aşağıdaki tabloda
 sunulmuştur:
 
-```
-Model Adı F1Score Standart Sapma (+/-)
-Logistic Regression 0.0025 0.
-Random Forest 0.2631 0.
-Gradient Boosting 0.0083 0.
-Decision Tree 0.3243 0.
-KNN 0.2522 0.
-```
+![image](https://github.com/besteaydogan/AkbankMachineLearning2.0/blob/919a5c663d1f9052b11b3193369c3d85d83882e1/visuals/model%201.png)
+
 **SMOTE öncesi en iyi model:** Decision Tree F1Score: 0.3243
 
 ### Model Karşılaştırma Sonuçları (SMOTE Sonrası)
@@ -117,81 +98,59 @@ Veri setindeki sınıf dengesizliğini gidermek amacıyla SMOTE Synthetic Min
 uygulandıktan sonra modeller yeniden eğitilmiş ve değerlendirilmiştir. SMOTE sonrası elde edilen F1Score
 değerleri aşağıdaki tabloda gösterilmiştir:
 
-```
-Model Adı F1Score Standart Sapma (+/-)
-Logistic Regression 0.6825 0.
-Random Forest 0.7770 0.
-Gradient Boosting 0.7121 0.
-Decision Tree 0.7587 0.
-KNN 0.7430 0.
-```
+![image](https://github.com/besteaydogan/AkbankMachineLearning2.0/blob/919a5c663d1f9052b11b3193369c3d85d83882e1/visuals/model%202.png)
+
 **SMOTE sonrası en iyi model:** Random Forest F1Score: 0.7770
 
 
 ### 6. Model Karşılaştırması ve Yorumlar
 
-SMOTE sonrası **Random Forest** modeli, **0.7770 F1Score** ile en iyi performansı gösterdi. Bu modelin test seti
-performansı: Doğruluk %58.53, Kesinlik %30.63, Duyarlılık %83.29, F1Score %44.78 ve AUCROC %73.06'dır.
-Özellikle yüksek Duyarlılık, randevuya gelmeyen hastaların çoğunu doğru tespit ettiğini; düşük Kesinlik ise bazı
-yanlış pozitif tahminler olduğunu gösterir. SMS_received, Age ve Scholarship değişkenleri, randevu katılımını tahmin
-etmede önemli faktörlerdir.
-**En iyi performans gösteren modelin Random Forest) test seti üzerindeki detaylı performans metrikleri
-aşağıdaki gibidir:
-Doğruluk Accuracy)**  0.
-**Kesinlik Precision)**  0.
-**Duyarlılık R ecall)**  0.
-**F1Score**  0.
-**AUCROC**  0.
+SMOTE sonrası **Random Forest** modeli, **0.7770 F1-Score** ile en iyi performansı gösterdi. Bu modelin test seti performansı: Doğruluk %58.53, Kesinlik %30.63, Duyarlılık %83.29, F1-Score %44.78 ve AUC-ROC %73.06'dır. Özellikle yüksek Duyarlılık, randevuya gelmeyen hastaların çoğunu doğru tespit ettiğini; düşük Kesinlik ise bazı yanlış pozitif tahminler olduğunu gösterir. `SMS_received`, `Age` ve `Scholarship` değişkenleri, randevu katılımını tahmin etmede önemli faktörlerdir.
+
+**En iyi performans gösteren modelin (Random Forest) test seti üzerindeki detaylı performans metrikleri aşağıdaki gibidir:**
+
+- **Doğruluk (Accuracy)**: 0.5853
+- **Kesinlik (Precision)**: 0.3063
+- **Duyarlılık (Recall)**: 0.8329
+- **F1-Score**: 0.4478
+- **AUC-ROC**: 0.7306
 
 ### 7. Görselleştirme
 
-```
-Yaş Grupları vs No-Show: Hastaların yaş grubuna göre randevuya katılım ve katılmama oranlarını gösterir.
-Bekleme Kategorileri vs No-Show: Randevu bekleme süresinin randevuya katılım üzerindeki etkisini inceler.
-Sağlık Problemi Sayısı vs No-Show: Sağlık sorunları sayısının randevu katılımıyla ilişkisini ortaya koyar.
-Hafta İçi/Sonu vs No-Show: Randevunun hafta içi veya hafta sonu olmasının katılım üzerindeki farkını gösterir.
-Aylık No-Show Dağılımı: Yılın aylarına göre randevuya katılım ve katılmama eğilimlerini sergiler.
-Hafta Günleri vs No-Show: Haftanın gününe göre randevu katılım oranlarının nasıl değiştiğini açıklar.
-```
+![image](https://github.com/besteaydogan/AkbankMachineLearning2.0/blob/919a5c663d1f9052b11b3193369c3d85d83882e1/visuals/bars.png)
 
-**Karmaşıklık Matrisi Confusion Matrix):** Bir sınıflandırma modelinin tahminlerini T ahmin Edilen Sınıf) gerçek
-sonuçlarla Gerçek Sınıf) karşılaştırarak, modelin ne kadar doğru ve ne tür hatalar yaptığını gösteren bir tablodur.
-Modelin performansını detaylı olarak anlamamızı sağlar.
+- **Yaş Grupları vs No-Show:** Hastaların yaş grubuna göre randevuya katılım ve katılmama oranlarını gösterir.
+- **Bekleme Kategorileri vs No-Show:** Randevu bekleme süresinin randevuya katılım üzerindeki etkisini inceler.
+- **Sağlık Problemi Sayısı vs No-Show:** Sağlık sorunları sayısının randevu katılımıyla ilişkisini ortaya koyar.
+- **Hafta İçi/Sonu vs No-Show:** Randevunun hafta içi veya hafta sonu olmasının katılım üzerindeki farkını gösterir.
+- **Aylık No-Show Dağılımı:** Yılın aylarına göre randevuya katılım ve katılmama eğilimlerini sergiler.
+- **Hafta Günleri vs No-Show:** Haftanın gününe göre randevu katılım oranlarının nasıl değiştiğini açıklar.
+
+![image](https://github.com/besteaydogan/AkbankMachineLearning2.0/blob/919a5c663d1f9052b11b3193369c3d85d83882e1/visuals/confusion%20matrix.png)
+
+**Karmaşıklık Matrisi (Confusion Matrix):** Bir sınıflandırma modelinin tahminlerini (Tahmin Edilen Sınıf) gerçek sonuçlarla (Gerçek Sınıf) karşılaştırarak, modelin ne kadar doğru ve ne tür hatalar yaptığını gösteren bir tablodur. Modelin performansını detaylı olarak anlamamızı sağlar.
 
 ### Sınıflandırma Raporu Özeti
 
-```
-Metrik Geldi 0 Gelmedi 1
-Precision 0.93 0.
-Recall 0.52 0.
-F1Score 0.67 0.
-Support 17642 4464
-Accuracy Genel Doğruluk): 0.
-Toplam Gözlem Sayısı: 22106
-```
+![image](https://github.com/besteaydogan/AkbankMachineLearning2.0/blob/7b907d136bed7416cc34a80867a66f3a5a83f8ed/visuals/model3.png)
+
+- **Accuracy (Genel Doğruluk):** 0.59
+- **Toplam Gözlem Sayısı:** 22106
 
 **ROC Eğrisi Ne İşe Yarar?**
 Bir sınıflandırma modelinin farklı eşik değerlerindeki performansını görselleştirmek için kullanılır. Özellikle ikili
 sınıflandırma problemlerinde, modelin pozitif sınıfı ne kadar iyi ayırt edebildiğini gösterir.
+
+![image](https://github.com/besteaydogan/AkbankMachineLearning2.0/blob/7b907d136bed7416cc34a80867a66f3a5a83f8ed/visuals/roc%20e%C4%9Frisi.png)
 
 ### 8. Sonuç ve Öneriler
 
 Modelin "No-show" (randevuya gelmeme) tahmininde en yüksek etkiye sahip olduğu belirlenen özellikler
 şunlardır:
 
-```
-Özellik Adı Önem Değeri
-waiting_days 0.
-age 0.
-sms_received_1 0.
-gender_M 0.
-hipertension_1 0.
-scholarship_1 0.
-handcap_1 0.
-alcoholism_1 0.
-diabetes_1 0.
-handcap_2 0.
-```
+![image](https://github.com/user-attachments/assets/4e346de9-79f1-4ca3-bedb-33d368fe7557)
+
+
 Bu analizlere göre, **waiting_days (bekleme günleri)** değişkeni, hastaların randevuya katılım davranışını tahmin
 etmede açık ara en önemli faktör olarak öne çıkmaktadır. age ve sms_received_1 değişkenleri de önemli katkı
 sağlamaktadır.
