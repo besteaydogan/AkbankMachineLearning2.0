@@ -1,2 +1,2 @@
-# Akbank-Makine-renmesine-Giri-Bootcamp
+# Akbank Machine Learning Bootcamp
 Akbank Makine Öğrenmesine Giriş Bootcamp
