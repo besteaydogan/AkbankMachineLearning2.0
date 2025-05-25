@@ -1,6 +1,6 @@
 # Akbank Machine Learning Bootcamp
 Akbank Makine Öğrenmesine Giriş Bootcamp
-
+https://www.kaggle.com/code/besteaydoan/code-ml/notebook
 # 🎀
 
 ## Rapor
